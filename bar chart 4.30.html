@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+</head>
+<body>
+  <h2>Bar Chart of Tweets Mentions for All Candidates between 4.30pm-5pm</h2>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("body", 800, 600);
+    var data = [
+      { "Candidate":"Clinton", "Tweet Frequency":134 },
+      { "Candidate":"Sanders", "Tweet Frequency":216 },
+      { "Candidate":"Bush", "Tweet Frequency": 74 },
+      { "Candidate":"Rubio", "Tweet Frequency":133},
+      { "Candidate":"Cruz", "Tweet Frequency":137},
+      { "Candidate":"Trump", "Tweet Frequency":208},
+      {"Candidate":"Kasich", "Tweet Frequency":10},    
+      {"Candidate":"Carson", "Tweet Frequency":37},
+      {"Candidate":"Christie", "Tweet Frequency":34},
+      {"Candidate":"Fiorina", "Tweet Frequency":2}
+      
+    ];
+    var chart = new dimple.chart(svg, data);
+    chart.addCategoryAxis("x", "Candidate");
+    chart.addMeasureAxis("y", "Tweet Frequency");
+    chart.addSeries(null, dimple.plot.bar);
+    chart.draw();
+  </script>
+</body>
+</html>

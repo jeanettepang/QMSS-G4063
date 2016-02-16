@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <head>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script>
+</head>
+<body>
+  <h2>Tweet Frequency for Ted Cruz (per half hour)</h2>
+  <script type="text/javascript">
+    var svg = dimple.newSvg("body", 800, 600);
+    var data = [
+      { "Time":"2-2.30pm", "Tweet Frequency":42 },
+      { "Time":"2.30-3pm", "Tweet Frequency":153 },
+      { "Time":"3-3.30pm", "Tweet Frequency": 38 },
+      { "Time":"3.30-4pm", "Tweet Frequency":94},
+      { "Time":"4-4.30pm", "Tweet Frequency":153},
+      { "Time":"4.30-5pm", "Tweet Frequency":137},
+      { "Time":"5-5.30pm", "Tweet Frequency":132},    
+      { "Time":"5.30-6pm", "Tweet Frequency":112},
+      { "Time":"6-6.30pm", "Tweet Frequency":105},
+      { "Time":"6.30-7pm", "Tweet Frequency":91}
+    
+    ];
+    var chart = new dimple.chart(svg, data);
+    chart.addCategoryAxis("x", "Time");
+    chart.addMeasureAxis("y", "Tweet Frequency");
+    chart.addSeries(null, dimple.plot.bar);
+    chart.draw();
+  </script>
+</body>
+</html>
+    
